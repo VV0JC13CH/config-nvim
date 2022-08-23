@@ -19,7 +19,7 @@ git clone https://github.com/VV0JC13CH/config-nvim.git ~/.config/nvim
 # Coc requirements and configuration
 ```
 sudo apt install npm
-sudo apt-get install build-essential checkinstall libssl-dev
+sudo apt install build-essential checkinstall libssl-dev
 sudo npm install -g n
 sudo n stable
 sudo npm install -g yarn
