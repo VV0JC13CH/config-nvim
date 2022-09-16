@@ -13,7 +13,6 @@ call plug#begin()
 
 " Appearance
 Plug 'https://github.com/vim-airline/vim-airline'	" Status bar
-Plug 'ryanoasis/vim-devicons'						" Icons
 Plug 'nanotech/jellybeans.vim'						" Colors scheme
 
 " Utilities
