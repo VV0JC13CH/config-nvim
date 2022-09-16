@@ -18,7 +18,6 @@ Plug 'nanotech/jellybeans.vim'						" Colors scheme
 
 " Utilities
 Plug 'https://github.com/preservim/nerdtree'		" NerdTree
-Plug 'https://github.com/tc50cal/vim-terminal'		" Vim Terminal
 
 " Completion / linters / formatters
 Plug 'neoclide/coc.nvim',  {'branch': 'master', 'do': 'yarn install'}
