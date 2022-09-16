@@ -24,9 +24,13 @@ Plug 'neoclide/coc.nvim',  {'branch': 'master', 'do': 'yarn install'}
 Plug 'rust-lang/rust.vim'													" syntax highlighting, formatting, and file detection
 
 " Git
+Plug 'f-person/git-blame.nvim'                      " Git-blame
+let g:gitblame_enabled = 1
 Plug 'airblade/vim-gitgutter'						" Shows Git changes in open files
 
+
 set encoding=UTF-8
+
 
 call plug#end()
 
