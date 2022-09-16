@@ -28,21 +28,24 @@ Plug 'f-person/git-blame.nvim'                      " Git-blame
 let g:gitblame_enabled = 1
 Plug 'airblade/vim-gitgutter'						" Shows Git changes in open files
 
-
-set encoding=UTF-8
-
-
 call plug#end()
 
 colorscheme jellybeans
 
+" Window Navigation with Ctrl-[hjkl]
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
+
 " NerdTree
-nnoremap <C-f> :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 let NERDTreeShowHidden=1							"show hidden files by default
+
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " Rust
 let g:rustfmt_autosave = 1
