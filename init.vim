@@ -17,6 +17,8 @@ Plug 'nanotech/jellybeans.vim'						" Colors scheme
 
 " Utilities
 Plug 'https://github.com/preservim/nerdtree'		" NerdTree
+Plug 'nvim-lua/plenary.nvim'						" Harpoon's requirement
+Plug 'ThePrimeagen/harpoon'
 
 " Completion / linters / formatters
 Plug 'neoclide/coc.nvim',  {'branch': 'master', 'do': 'yarn install'}
@@ -31,6 +33,11 @@ call plug#end()
 
 colorscheme jellybeans
 
+" Harpoon
+nnoremap <A-C-F> :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <A-C-D> ::lua require("harpoon.mark").add_file()<CR>
+nnoremap <A-C-Right> ::lua require("harpoon.ui").nav_next()<CR>
+nnoremap <A-C-Left> ::lua require("harpoon.ui").nav_next()<CR>
 " Window Navigation with Ctrl-[hjkl]
 noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
