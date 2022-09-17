@@ -40,7 +40,7 @@ yarn install
 ## Coc extensions:
 
 ```
-:CocInstall coc-json coc-pyright coc-rust-analyzer coc-snippets coc-go coc-tsserver coc-yaml coc-sh
+:CocInstall coc-json coc-html coc-pyright coc-rust-analyzer coc-snippets coc-go coc-tsserver coc-yaml coc-sh
 ```
 
 ### Bonus: Integration with kitty
