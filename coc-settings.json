@@ -10,6 +10,7 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
+    "terraform",
     "python"
   ],
   "python.formatting.provider": "black",
@@ -24,5 +25,34 @@
     "typescriptreact",
     "html"
   ],
-  "codeLens.enable": false
+  "codeLens.enable": false,
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"]
+    },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "filetypes": ["go"]
+    },
+    "godot": {
+      "host": "127.0.0.1",
+      "filetypes": ["gd", "gdscript3"],
+      "port": 6008
+    },
+    "rust": {
+      "command": "rust-analyzer",
+      "filetypes": ["rust"],
+      "rootPatterns": ["Cargo.toml"]
+    },
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
+    }
+  }
 }
