@@ -36,16 +36,18 @@ call plug#end()
 colorscheme jellybeans
 " fzf
 nnoremap <A-C-F> :Files<CR>
-nnoremap <A-C-L> :GFiles?<CR>
+nnoremap <A-C-G> :GFiles?<CR>
 nnoremap <A-C-B> :Buffers<CR>
+nnoremap <A-C-Up> :bprev<CR>
+nnoremap <A-C-Down> :bnext<CR>
 
 
 " Harpoon
 nnoremap <A-C-H> :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <A-C-A> ::lua require("harpoon.mark").add_file()<CR>
 nnoremap <A-C-R> ::lua require("harpoon.mark").rm_file()<CR>
-nnoremap <A-Right> ::lua require("harpoon.ui").nav_next()<CR>
-nnoremap <A-Left> ::lua require("harpoon.ui").nav_next()<CR>
+nnoremap <A-C-Right> ::lua require("harpoon.ui").nav_next()<CR>
+nnoremap <A-C-Left> ::lua require("harpoon.ui").nav_next()<CR>
 nnoremap <A-1> :lua require("harpoon.ui").nav_file(1)<CR>
 nnoremap <A-2> :lua require("harpoon.ui").nav_file(2)<CR>
 nnoremap <A-3> :lua require("harpoon.ui").nav_file(3)<CR>
