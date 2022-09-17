@@ -19,6 +19,8 @@ Plug 'nanotech/jellybeans.vim'						" Colors scheme
 Plug 'https://github.com/preservim/nerdtree'		" NerdTree
 Plug 'nvim-lua/plenary.nvim'						" Harpoon's requirement
 Plug 'ThePrimeagen/harpoon'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Completion / linters / formatters
 Plug 'neoclide/coc.nvim',  {'branch': 'master', 'do': 'yarn install'}
@@ -32,6 +34,11 @@ Plug 'airblade/vim-gitgutter'						" Shows Git changes in open files
 call plug#end()
 
 colorscheme jellybeans
+" fzf
+nnoremap <A-C-F> :Files<CR>
+nnoremap <A-C-L> :GFiles?<CR>
+nnoremap <A-C-B> :Buffers<CR>
+
 
 " Harpoon
 nnoremap <A-C-H> :lua require("harpoon.ui").toggle_quick_menu()<CR>
