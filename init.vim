@@ -34,11 +34,19 @@ call plug#end()
 colorscheme jellybeans
 
 " Harpoon
-nnoremap <A-C-F> :lua require("harpoon.ui").toggle_quick_menu()<CR>
-nnoremap <A-C-D> ::lua require("harpoon.mark").add_file()<CR>
-nnoremap <A-C-Right> ::lua require("harpoon.ui").nav_next()<CR>
-nnoremap <A-C-Left> ::lua require("harpoon.ui").nav_next()<CR>
-" Window Navigation with Ctrl-[hjkl]
+nnoremap <A-C-H> :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <A-C-A> ::lua require("harpoon.mark").add_file()<CR>
+nnoremap <A-C-R> ::lua require("harpoon.mark").rm_file()<CR>
+nnoremap <A-Right> ::lua require("harpoon.ui").nav_next()<CR>
+nnoremap <A-Left> ::lua require("harpoon.ui").nav_next()<CR>
+nnoremap <A-1> :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <A-2> :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <A-3> :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <A-4> :lua require("harpoon.ui").nav_file(4)<CR>
+nnoremap <A-5> :lua require("harpoon.ui").nav_file(5)<CR>
+
+
+"Window Navigation with Ctrl-[hjkl]
 noremap <C-J> <C-W>j
 noremap <C-K> <C-W>k
 noremap <C-H> <C-W>h
