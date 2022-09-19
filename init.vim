@@ -22,10 +22,13 @@ Plug 'ThePrimeagen/harpoon'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'mrk21/yaml-vim' " For hieradata
+Plug 'rodjek/vim-puppet' " For Puppet syntax highlighting
+Plug 'vim-ruby/vim-ruby' " For Facts, Ruby functions, and custom providers
+
 " Completion / linters / formatters
 Plug 'neoclide/coc.nvim',  {'branch': 'master', 'do': 'yarn install'}
 Plug 'rust-lang/rust.vim'													" syntax highlighting, formatting, and file detection
-
 " Git
 Plug 'f-person/git-blame.nvim'                      " Git-blame
 let g:gitblame_enabled = 1
