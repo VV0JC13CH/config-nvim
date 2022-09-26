@@ -23,6 +23,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'mrk21/yaml-vim' " For hieradata
+Plug 'TheLocehiliosan/vim-eyaml' " For hieradata in eyaml
 Plug 'rodjek/vim-puppet' " For Puppet syntax highlighting
 Plug 'vim-ruby/vim-ruby' " For Facts, Ruby functions, and custom providers
 
