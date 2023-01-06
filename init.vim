@@ -2,6 +2,7 @@
 :set number					" show line number
 :set relativenumber			" show line numbers starting from the current one.
 :set autoindent
+:set expandtab              " spaces instead tabs
 :set tabstop=4				" number of spaces for tabs
 :set shiftwidth=4
 :set smarttab
