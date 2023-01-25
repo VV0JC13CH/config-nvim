@@ -45,7 +45,7 @@ Plug 'https://github.com/vim-airline/vim-airline'	" Status bar
 Plug 'nanotech/jellybeans.vim'						" Colors scheme
 
 " Utilities
-Plug 'https://github.com/preservim/nerdtree'		" NerdTree
+Plug 'kevinhwang91/rnvimr'
 Plug 'nvim-lua/plenary.nvim'						" Harpoon's requirement
 Plug 'ThePrimeagen/harpoon'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -112,14 +112,11 @@ noremap <C-K> <C-W>k
 noremap <C-H> <C-W>h
 noremap <C-L> <C-W>l
 
-" NerdTree
-nnoremap <C-t> :NERDTreeToggle<CR>
-let g:NERDTreeDirArrowExpandable="+"
-let g:NERDTreeDirArrowCollapsible="~"
-let NERDTreeShowHidden=1							"show hidden files by default
+" rnvimr
+nnoremap <C-t> :RnvimrToggle<CR>
+" Make Ranger replace Netrw and be the file explorer
+let g:rnvimr_enable_ex = 1
 
-" Close the tab if NERDTree is the only window remaining in it.
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " Rust
 let g:rustfmt_autosave = 1
@@ -128,6 +125,9 @@ let g:rustfmt_fail_silently = 0
 
 " LSP-ZERO BEGIN
 lua <<EOF
+
+--- LSP-ZERO BEGIN ---
+
 -- Learn the keybindings, see :help lsp-zero-keybindings
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
 local lsp = require('lsp-zero')
@@ -139,5 +139,9 @@ lsp.ensure_installed({
   'sumneko_lua',
 })
 lsp.setup()
+
+--- LSP-ZERO END ---
+
+
 EOF
 " LSP-ZERO END
