@@ -22,7 +22,7 @@
 :set backupdir=~/.vim/backup//
 :set directory=~/.vim/swap//
 :set undofile
-:set undodir=~/.vim/undo//
+:set undodir=~/.vim/undodir//
 
 " Search
 :set hlsearch
