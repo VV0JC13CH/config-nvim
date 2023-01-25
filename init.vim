@@ -11,35 +11,35 @@
 :set shiftwidth=4
 :set expandtab              " spaces instead tabs
 
+" Wrap
+:set nowrap
+
 " Update
 :set updatetime=50
 
 " Backups / undo
-:set swapfile=false
-:set backup=false
+:set backup
+:set backupdir=~/.vim/backup//
+:set directory=~/.vim/swap//
 :set undofile
-:set undodir="~/.vim/undodir"
+:set undodir=~/.vim/undo//
 
 " Search
-:set hlsearch=false
+:set hlsearch
 :set incsearch
 
-" Wrap
-:set wrap=false             " Text wrapping
-
 " Scrolling
-:set scrolloff = 8          " Always min.8 rows above/below when scrolling up/down
-:set signcolumn = "yes"
+:set scrolloff=8          " Always min.8 rows above/below when scrolling up/down
+:set signcolumn=yes
 
 :set mouse=a				" allows the use of the mouse in the editor
 
 " Colors
-:set background = "dark"
-:set colorcolumn = 80
+:set background="dark"
+:set colorcolumn=80
 :set termguicolors
 
 call plug#begin()
-
 " Appearance
 Plug 'https://github.com/vim-airline/vim-airline'	" Status bar
 Plug 'nanotech/jellybeans.vim'						" Colors scheme
