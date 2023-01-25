@@ -1,14 +1,42 @@
 :set clipboard=unnamedplus	" enables the clipboard between Vim/Neovim and other applications.
+
 :set number					" show line number
 :set relativenumber			" show line numbers starting from the current one.
+
+" Indent
 :set autoindent
-:set expandtab              " spaces instead tabs
-:set tabstop=4				" number of spaces for tabs
-:set shiftwidth=4
 :set smarttab
+:set tabstop=4				" number of spaces for tabs
 :set softtabstop=4
+:set shiftwidth=4
+:set expandtab              " spaces instead tabs
+
+" Update
+:set updatetime=50
+
+" Backups / undo
+:set swapfile=false
+:set backup=false
+:set undofile
+:set undodir="~/.vim/undodir"
+
+" Search
+:set hlsearch=false
+:set incsearch
+
+" Wrap
+:set wrap=false             " Text wrapping
+
+" Scrolling
+:set scrolloff = 8          " Always min.8 rows above/below when scrolling up/down
+:set signcolumn = "yes"
+
 :set mouse=a				" allows the use of the mouse in the editor
+
+" Colors
 :set background = "dark"
+:set colorcolumn = 80
+:set termguicolors
 
 call plug#begin()
 
