@@ -39,7 +39,6 @@ set wildmode=longest,list,full
 " Colors
 :set background="dark"
 :set colorcolumn=80
-:set termguicolors
 
 call plug#begin()
 " Appearance
@@ -47,7 +46,7 @@ Plug 'https://github.com/vim-airline/vim-airline'	" Status bar
 Plug 'nanotech/jellybeans.vim'						" Colors scheme
 
 " Utilities
-Plug 'kevinhwang91/rnvimr'
+Plug 'kevinhwang91/rnvimr'                          " ranger in VIM
 Plug 'nvim-lua/plenary.nvim'						" Harpoon's requirement
 Plug 'ThePrimeagen/harpoon'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -58,9 +57,11 @@ Plug 'TheLocehiliosan/vim-eyaml' " For hieradata in eyaml
 Plug 'rodjek/vim-puppet' " For Puppet syntax highlighting
 Plug 'vim-ruby/vim-ruby' " For Facts, Ruby functions, and custom providers
 
+" highlighting
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Completion / linters / formatters
 Plug 'rust-lang/rust.vim'							" syntax highlighting, formatting, and file detection
-
+Plug 'nathom/filetype.nvim'							" recognize files
 " LSP Support
 Plug 'neovim/nvim-lspconfig'             " Required
 Plug 'williamboman/mason.nvim'           " Optional
@@ -198,7 +199,6 @@ lsp.ensure_installed({
 lsp.setup()
 
 --- LSP-ZERO END ---
-
 
 EOF
 " LSP-ZERO END
