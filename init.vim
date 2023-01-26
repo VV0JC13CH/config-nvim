@@ -39,6 +39,7 @@ set wildmode=longest,list,full
 " Colors
 :set background="dark"
 :set colorcolumn=80
+:set termguicolors
 
 call plug#begin()
 " Appearance
