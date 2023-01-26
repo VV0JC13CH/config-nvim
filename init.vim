@@ -17,6 +17,9 @@
 " Update
 :set updatetime=50
 
+" Autocompletion of commands
+set wildmode=longest,list,full
+
 " Backups / undo
 :set backup
 :set backupdir=~/.vim/backup//
