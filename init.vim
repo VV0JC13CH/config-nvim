@@ -195,9 +195,17 @@ lsp.ensure_installed({
   -- Replace these with whatever servers you want to install
   'tsserver',
   'eslint',
-  'sumneko_lua',
+  'sumneko_lua',  
 })
 lsp.setup()
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = false,
+  float = true,
+})
 
 --- LSP-ZERO END ---
 
