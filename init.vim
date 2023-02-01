@@ -4,6 +4,7 @@
 
 " Indent
 :set autoindent
+:set smartindent
 :set smarttab
 :set tabstop=4				" number of spaces for tabs
 :set softtabstop=4
@@ -31,15 +32,19 @@ set wildmode=longest,list,full
 :set incsearch
 
 " Scrolling
-:set scrolloff=8          " Always min.8 rows above/below when scrolling up/down
-:set signcolumn=yes
-
+:set scrolloff=8            " Always min.8 rows above/below when scrolling up/down
 :set mouse=a				" allows the use of the mouse in the editor
+
+" Column
+:set signcolumn=yes
+:set colorcolumn=80         " Color column after provided No of chars
 
 " Colors
 :set background="dark"
-:set colorcolumn=80
 :set termguicolors
+
+" keybindings
+
 
 call plug#begin()
 " Appearance
@@ -81,6 +86,9 @@ Plug 'L3MON4D3/LuaSnip'             " Required
 Plug 'rafamadriz/friendly-snippets' " Optional
 Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v1.x'}
 
+" Undo history
+Plug 'mbbill/undotree'
+
 " Git
 Plug 'f-person/git-blame.nvim'                      " Git-blame
 let g:gitblame_enabled = 1
@@ -106,6 +114,29 @@ endif
 call plug#end()
 
 colorscheme jellybeans
+
+" keybindings
+
+let mapleader = " "         " map leader to Space
+" View history of file
+nnoremap <leader>u :UndotreeToggle<CR>
+
+" Move selected lines up and down by J,K
+vnoremap <s-j> :m '>+1<CR>gv=gv
+vnoremap <s-k> :m '<-2<CR>gv=gv
+
+" Cursor stays in the middle while jumping up and down
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+" Cursor stays at the beginning of the line while J action (replace below
+" newlines with spaces)
+nnoremap <s-j> mzJ`z
+
+" After replacing selected text with copied one, copied one is not replaced
+" with selected text
+xnoremap <leader>p pgvy
+
 
 " Default keys
 call wilder#setup({
@@ -151,18 +182,18 @@ nnoremap <A-C-B> :Buffers<CR>
 
 
 " Harpoon
-nnoremap <A-C-H> :lua require("harpoon.ui").toggle_quick_menu()<CR>
-nnoremap <A-C-A> ::lua require("harpoon.mark").add_file()<CR>
-nnoremap <A-C-R> ::lua require("harpoon.mark").rm_file()<CR>
-nnoremap <A-C-Up> ::lua require("harpoon.ui").nav_prev()<CR>
-nnoremap <A-C-Down> ::lua require("harpoon.ui").nav_next()<CR>
-nnoremap <A-C-Right> :tabn<CR>
-nnoremap <A-C-Left> :tabp<CR>
-nnoremap <A-1> :lua require("harpoon.ui").nav_file(1)<CR>
-nnoremap <A-2> :lua require("harpoon.ui").nav_file(2)<CR>
-nnoremap <A-3> :lua require("harpoon.ui").nav_file(3)<CR>
-nnoremap <A-4> :lua require("harpoon.ui").nav_file(4)<CR>
-nnoremap <A-5> :lua require("harpoon.ui").nav_file(5)<CR>
+nnoremap <s-A-C-H> :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <s-A-C-A> ::lua require("harpoon.mark").add_file()<CR>
+nnoremap <s-A-C-R> ::lua require("harpoon.mark").rm_file()<CR>
+nnoremap <s-A-C-Up> ::lua require("harpoon.ui").nav_prev()<CR>
+nnoremap <s-A-C-Down> ::lua require("harpoon.ui").nav_next()<CR>
+nnoremap <s-A-C-Right> :tabn<CR>
+nnoremap <s-A-C-Left> :tabp<CR>
+nnoremap <s-A-1> :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <s-A-2> :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <s-A-3> :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <s-A-4> :lua require("harpoon.ui").nav_file(4)<CR>
+nnoremap <s-A-5> :lua require("harpoon.ui").nav_file(5)<CR>
 
 
 "Window Navigation with Ctrl-[hjkl]
