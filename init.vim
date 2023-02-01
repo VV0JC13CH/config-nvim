@@ -136,7 +136,8 @@ nnoremap <s-j> mzJ`z
 " After replacing selected text with copied one, copied one is not replaced
 " with selected text
 xnoremap <leader>p pgvy
-
+" Start replacing current word under cursor
+nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 
 " Default keys
 call wilder#setup({
@@ -182,25 +183,25 @@ nnoremap <A-C-B> :Buffers<CR>
 
 
 " Harpoon
-nnoremap <s-A-C-H> :lua require("harpoon.ui").toggle_quick_menu()<CR>
-nnoremap <s-A-C-A> ::lua require("harpoon.mark").add_file()<CR>
-nnoremap <s-A-C-R> ::lua require("harpoon.mark").rm_file()<CR>
-nnoremap <s-A-C-Up> ::lua require("harpoon.ui").nav_prev()<CR>
-nnoremap <s-A-C-Down> ::lua require("harpoon.ui").nav_next()<CR>
-nnoremap <s-A-C-Right> :tabn<CR>
-nnoremap <s-A-C-Left> :tabp<CR>
-nnoremap <s-A-1> :lua require("harpoon.ui").nav_file(1)<CR>
-nnoremap <s-A-2> :lua require("harpoon.ui").nav_file(2)<CR>
-nnoremap <s-A-3> :lua require("harpoon.ui").nav_file(3)<CR>
-nnoremap <s-A-4> :lua require("harpoon.ui").nav_file(4)<CR>
-nnoremap <s-A-5> :lua require("harpoon.ui").nav_file(5)<CR>
+nnoremap <leader>h :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <leader>a ::lua require("harpoon.mark").add_file()<CR>
+nnoremap <leader>r ::lua require("harpoon.mark").rm_file()<CR>
+nnoremap <C-A-Up> ::lua require("harpoon.ui").nav_prev()<CR>
+nnoremap <C-A-Down> ::lua require("harpoon.ui").nav_next()<CR>
+nnoremap <C-A-Right> :tabn<CR>
+nnoremap <C-A-Left> :tabp<CR>
+nnoremap <A-1> :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <A-2> :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <A-3> :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <A-4> :lua require("harpoon.ui").nav_file(4)<CR>
+nnoremap <A-5> :lua require("harpoon.ui").nav_file(5)<CR>
 
 
 "Window Navigation with Ctrl-[hjkl]
-noremap <C-J> <C-W>j
-noremap <C-K> <C-W>k
-noremap <C-H> <C-W>h
-noremap <C-L> <C-W>l
+noremap <A-C-J> <C-W>j
+noremap <A-C-K> <C-W>k
+noremap <A-C-H> <C-W>h
+noremap <A-C-L> <C-W>l
 
 " rnvimr
 nnoremap <C-t> :RnvimrToggle<CR>
