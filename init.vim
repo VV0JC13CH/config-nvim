@@ -89,6 +89,9 @@ Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v1.x'}
 " Undo history
 Plug 'mbbill/undotree'
 
+" TmuxTree integration
+Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+Plug 'nvim-tree/nvim-tree.lua'
 " Git
 Plug 'f-person/git-blame.nvim'                      " Git-blame
 let g:gitblame_enabled = 1
