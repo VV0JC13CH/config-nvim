@@ -89,9 +89,6 @@ Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v1.x'}
 " Undo history
 Plug 'mbbill/undotree'
 
-" TmuxTree integration
-Plug 'kiyoon/nvim-tree-remote.nvim'
-
 " Git
 Plug 'f-person/git-blame.nvim'                      " Git-blame
 let g:gitblame_enabled = 1
@@ -243,6 +240,7 @@ vim.diagnostic.config({
 })
 
 --- LSP-ZERO END ---
+
 
 EOF
 " LSP-ZERO END
