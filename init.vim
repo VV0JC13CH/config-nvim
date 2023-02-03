@@ -63,7 +63,7 @@ Plug 'TheLocehiliosan/vim-eyaml' " For hieradata in eyaml
 Plug 'rodjek/vim-puppet' " For Puppet syntax highlighting
 Plug 'vim-ruby/vim-ruby' " For Facts, Ruby functions, and custom providers
 
-" Diagnostics:
+" Diagnostics
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
 " highlighting
@@ -229,9 +229,26 @@ local lsp = require('lsp-zero')
 lsp.preset('recommended')
 lsp.ensure_installed({
   -- Replace these with whatever servers you want to install
+  'bashls',
+  'omnisharp_mono',
+  'dotls',
+  'gopls',
+  'html',
+  'jsonls',
+  'jdtls',
+  'sumneko_lua',
+  'marksman',
+  'puppet',
+  'pyright',
+  'ruby_ls',
+  'rust_analyzer',
+  'sqlls',
+  'taplo',
+  'tailwindcss',
   'tsserver',
-  'eslint',
-  'sumneko_lua',  
+  'terraformls',
+  'lemminx',
+  'yamlls',
 })
 lsp.setup()
 vim.diagnostic.config({
@@ -242,9 +259,6 @@ vim.diagnostic.config({
   severity_sort = false,
   float = true,
 })
-
 --- LSP-ZERO END ---
-
-
 EOF
 " --- LUA END ---
