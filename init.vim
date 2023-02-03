@@ -217,7 +217,7 @@ noremap <A-C-H> <C-W>h
 noremap <A-C-L> <C-W>l
 
 " rnvimr
-nnoremap <C-t> :RnvimrToggle<CR>
+nnoremap <C-r> :RnvimrToggle<CR>
 " Make Ranger replace Netrw and be the file explorer
 let g:rnvimr_enable_ex = 1
 
