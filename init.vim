@@ -63,6 +63,9 @@ Plug 'TheLocehiliosan/vim-eyaml' " For hieradata in eyaml
 Plug 'rodjek/vim-puppet' " For Puppet syntax highlighting
 Plug 'vim-ruby/vim-ruby' " For Facts, Ruby functions, and custom providers
 
+" Diagnostics:
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
 " highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Completion / linters / formatters
@@ -181,6 +184,8 @@ nnoremap <A-C-B> :Buffers<CR>
 " nnoremap <A-C-Up> :bprev<CR>
 " nnoremap <A-C-Down> :bnext<CR>
 
+" Trouble (Diagnostics)
+nnoremap <leader>e <cmd>TroubleToggle<cr>
 
 " Harpoon
 nnoremap <leader>h :lua require("harpoon.ui").toggle_quick_menu()<CR>
@@ -214,9 +219,8 @@ let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
 
-" LSP-ZERO BEGIN
+" --- LUA BEGIN ---
 lua <<EOF
-
 --- LSP-ZERO BEGIN ---
 
 -- Learn the keybindings, see :help lsp-zero-keybindings
@@ -243,4 +247,4 @@ vim.diagnostic.config({
 
 
 EOF
-" LSP-ZERO END
+" --- LUA END ---
