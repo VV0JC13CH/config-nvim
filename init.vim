@@ -71,6 +71,10 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Completion / linters / formatters
 Plug 'rust-lang/rust.vim'							" syntax highlighting, formatting, and file detection
 Plug 'nathom/filetype.nvim'							" recognize files
+" Formatting
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
 " LSP Support
 Plug 'neovim/nvim-lspconfig'             " Required
 Plug 'williamboman/mason.nvim'           " Optional
@@ -123,6 +127,10 @@ colorscheme jellybeans
 let mapleader = " "         " map leader to Space
 " View history of file
 nnoremap <leader>u :UndotreeToggle<CR>
+
+" Format selected or all code:
+nnoremap <leader>f :FormatCode<CR>
+vnoremap <leader>f :FormatLines<CR>
 
 " Move selected lines up and down by J,K
 vnoremap <s-j> :m '>+1<CR>gv=gv
@@ -189,10 +197,10 @@ nnoremap <leader>e <cmd>TroubleToggle<cr>
 
 " Harpoon
 nnoremap <leader>h :lua require("harpoon.ui").toggle_quick_menu()<CR>
-nnoremap <leader>a ::lua require("harpoon.mark").add_file()<CR>
-nnoremap <leader>r ::lua require("harpoon.mark").rm_file()<CR>
-nnoremap <C-A-Up> ::lua require("harpoon.ui").nav_prev()<CR>
-nnoremap <C-A-Down> ::lua require("harpoon.ui").nav_next()<CR>
+nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
+nnoremap <leader>r :lua require("harpoon.mark").rm_file()<CR>
+nnoremap <C-A-Up> :lua require("harpoon.ui").nav_prev()<CR>
+nnoremap <C-A-Down> :lua require("harpoon.ui").nav_next()<CR>
 nnoremap <C-A-Right> :tabn<CR>
 nnoremap <C-A-Left> :tabp<CR>
 nnoremap <A-1> :lua require("harpoon.ui").nav_file(1)<CR>
@@ -215,7 +223,7 @@ let g:rnvimr_enable_ex = 1
 
 
 " Rust
-let g:rustfmt_autosave = 1
+let g:rustfmt_autosave = 0
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
 
