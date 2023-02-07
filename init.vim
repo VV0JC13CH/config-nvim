@@ -196,7 +196,7 @@ nnoremap <A-C-B> :Buffers<CR>
 nnoremap <leader>e <cmd>TroubleToggle<cr>
 
 " Harpoon
-nnoremap <leader>h :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <leader><leader> :lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
 nnoremap <leader>r :lua require("harpoon.mark").rm_file()<CR>
 nnoremap <C-A-Up> :lua require("harpoon.ui").nav_prev()<CR>
