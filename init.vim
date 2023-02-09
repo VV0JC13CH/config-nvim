@@ -75,6 +75,7 @@ Plug 'nathom/filetype.nvim'							" recognize files
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
+Plug 'hashivim/vim-terraform'
 " LSP Support
 Plug 'neovim/nvim-lspconfig'             " Required
 Plug 'williamboman/mason.nvim'           " Optional
@@ -217,7 +218,7 @@ noremap <A-C-H> <C-W>h
 noremap <A-C-L> <C-W>l
 
 " rnvimr
-nnoremap <C-r> :RnvimrToggle<CR>
+nnoremap <C-A-r> :RnvimrToggle<CR>
 " Make Ranger replace Netrw and be the file explorer
 let g:rnvimr_enable_ex = 1
 
