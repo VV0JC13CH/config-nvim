@@ -71,6 +71,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Completion / linters / formatters
 Plug 'rust-lang/rust.vim'							" syntax highlighting, formatting, and file detection
 Plug 'nathom/filetype.nvim'							" recognize files
+Plug 'cohama/lexima.vim'                            " Autocompletion of brackets 
 " Formatting
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
