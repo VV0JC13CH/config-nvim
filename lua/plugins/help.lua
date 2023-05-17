@@ -7,7 +7,11 @@ return {
     config = function()
       require('dashboard').setup {
         theme = 'hyper',
-        header = {'xxx'},
+        hide = {
+          winbar = false,
+          tabline = false,
+          statusline = false,
+        },
         config = {
           week_header = {
             enable = true,
