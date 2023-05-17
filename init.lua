@@ -7,7 +7,7 @@
 -- [[ Setting appearance ]]
 require("appearance")
 -- [[ Setting keymap ]]
-require("keymap")
+require("remap")
 -- [[ Setting diagnostic ]]
 require("diagnostic")
 -- [[ Setting options ]]
@@ -33,8 +33,6 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where plugins are installed.
 require('lazy').setup({
   {
-    -- Useful plugin to show you pending keybinds.
-    { 'folke/which-key.nvim', opts = {} },
     -- Adds plugins, configuration, etc from `lua/plugins/*.lua`
     { import = 'plugins' },
   } }, {})

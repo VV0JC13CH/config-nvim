@@ -20,3 +20,21 @@ vim.keymap.set('n', '<A-C-J>', '<C-W>j', { desc = 'Switch to left window' })
 vim.keymap.set('n', '<A-C-H>', '<C-W>h', { desc = 'Switch to above window' })
 vim.keymap.set('n', '<A-C-K>', '<C-W>k', { desc = 'Switch to right window' })
 vim.keymap.set('n', '<A-C-L>', '<C-W>l', { desc = 'Switch to below window' })
+
+-- Move selected lines up and down by J,K
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selected lines down' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selected lines up' })
+
+-- Keeps cursor in the middle while <C-d> or <C-u>
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- Keeps cursor in the middle while searching
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+-- Paste without loosing copied content
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
+-- Find and replace word below cursor
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

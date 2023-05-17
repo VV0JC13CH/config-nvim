@@ -99,5 +99,11 @@ return {
       vim.keymap.set('n', '<A-C-B>', '<cmd>Buffers<CR>', { desc = '[B]uffers' })
     end,
 
+  },
+  {
+    'mbbill/undotree',
+    config = function()
+      vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<CR>', { desc = '[U]ndo tree' })
+    end,
   }
 }
