@@ -8,6 +8,7 @@
 
 return {
   -- NOTE: Yes, you can install new plugins here!
+  'folke/trouble.nvim',
   'mfussenegger/nvim-dap',
   -- NOTE: And you can specify dependencies as well
   dependencies = {
