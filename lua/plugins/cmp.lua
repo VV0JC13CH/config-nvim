@@ -7,6 +7,7 @@ return {
       'lambdalisue/nerdfont.vim',
       'romgrk/fzy-lua-native',
     },
+    build = ':UpdateRemotePlugins',
     config = function()
       local wilder = require('wilder')
       wilder.setup({ modes = { ':', '/', '?' } })
