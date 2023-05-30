@@ -4,6 +4,7 @@
 --
 
 return {
+  'wellle/context.vim',
   {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
