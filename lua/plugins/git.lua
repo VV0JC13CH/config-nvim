@@ -3,8 +3,32 @@
 -- Git related plugins
 --
 
+-- decode strings I don't want to index
+function dec(data)
+    local b='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+    data = string.gsub(data, '[^'..b..'=]', '')
+    return (data:gsub('.', function(x)
+        if (x == '=') then return '' end
+        local r,f='',(b:find(x)-1)
+        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and '1' or '0') end
+        return r;
+    end):gsub('%d%d%d?%d?%d?%d?%d?%d?', function(x)
+        if (#x ~= 8) then return '' end
+        local c=0
+        for i=1,8 do c=c+(x:sub(i,i)=='1' and 2^(8-i) or 0) end
+        return string.char(c)
+    end))
+end
+
 return {
-  'shumphrey/fugitive-gitlab.vim',
+  {
+    'shumphrey/fugitive-gitlab.vim',
+    config = function()
+      local private_domain = dec('Z2l0LmVnbnl0ZS1pbnRlcm5hbC5jb20=')
+      local cmd = string.format("let g:fugitive_gitlab_domains = [%q]", private_domain)
+      vim.cmd(cmd)
+    end
+  },
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   {
@@ -20,7 +44,7 @@ return {
         changedelete = { text = '~' },
         untracked    = { text = '┆' },
       },
-      signcolumn                   = true, -- Toggle with `:Gitsigns toggle_signs`
+      signcolumn                   = true,  -- Toggle with `:Gitsigns toggle_signs`
       numhl                        = false, -- Toggle with `:Gitsigns toggle_numhl`
       linehl                       = false, -- Toggle with `:Gitsigns toggle_linehl`
       word_diff                    = false, -- Toggle with `:Gitsigns toggle_word_diff`
@@ -39,7 +63,7 @@ return {
       current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
       sign_priority                = 6,
       update_debounce              = 100,
-      status_formatter             = nil, -- Use default
+      status_formatter             = nil,   -- Use default
       max_file_length              = 40000, -- Disable if file is longer than this (in lines)
       preview_config               = {
         -- Options passed to nvim_open_win
