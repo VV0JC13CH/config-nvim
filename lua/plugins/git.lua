@@ -4,6 +4,7 @@
 --
 
 return {
+  'shumphrey/fugitive-gitlab.vim',
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   {
