@@ -2,22 +2,17 @@
 --
 -- Wiki/notes related plugins
 --
-function Dir_exists( path )
-if type( path ) ~= 'string' then
-    error('input error')
-    return false
+function Choose_vault( priv_vault, work_vault )
+if os.execute( 'cd ' .. priv_vault ) == 0 then
+    return priv_vault
 end
-local response = os.execute( 'cd ' .. path )
-if response == nil then
-    return false
-end
-return response
+return work_vault
 end
 
 return {
   "epwalsh/obsidian.nvim",
   lazy = true,
-  event = { "BufReadPre " .. vim.fn.expand "~" .. "/Documents/Obsidian/*" },
+  event = { "BufReadPre " .. vim.fn.expand "~" .. "/Documents/*" },
   dependencies = {
     -- Required.
     "nvim-lua/plenary.nvim",
@@ -33,14 +28,14 @@ return {
     "preservim/vim-markdown",
   },
   opts = {
-    dir = "~/Documents/Obsidian",  -- no need to call 'vim.fn.expand' here
+    dir = Choose_vault("~/Documents/Obsidian/Private", "~/Documents/Obsidian/DevOps"),  -- no need to call 'vim.fn.expand' here
 
     -- Optional, if you keep notes in a specific subdirectory of your vault.
-    notes_subdir = "notes",
+ -- notes_subdir = "notes",
 
     daily_notes = {
       -- Optional, if you keep daily notes in a separate directory.
-      folder = "notes/dailies",
+      folder = "Journal",
       -- Optional, if you want to change the date format for daily notes.
       date_format = "%Y-%m-%d"
     },
