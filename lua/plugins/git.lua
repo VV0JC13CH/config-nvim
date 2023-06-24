@@ -29,6 +29,10 @@ return {
       vim.cmd(cmd)
     end
   },
+  -- better experience while 'git commit'
+  'rhysd/committia.vim',
+  -- view git history GV - repo, GV! - file
+  'junegunn/gv.vim',
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   {
