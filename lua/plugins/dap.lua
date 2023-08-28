@@ -11,7 +11,8 @@ return {
   {
     'folke/trouble.nvim',
     config = function()
-      vim.keymap.set('n', '<leader>e', '<cmd>TroubleToggle<cr>')
+      vim.keymap.set('n', '<leader>te', '<cmd>TroubleToggle<cr>', { desc = "Toggle Errors" })
+      vim.keymap.set('n', '<leader>dd', '<cmd>TroubleToggle<cr>', { desc = "Toggle Debugger" })
     end,
   },
   {
@@ -54,10 +55,10 @@ return {
       vim.keymap.set('n', '<F1>', dap.step_into)
       vim.keymap.set('n', '<F2>', dap.step_over)
       vim.keymap.set('n', '<F3>', dap.step_out)
-      vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint)
-      vim.keymap.set('n', '<leader>B', function()
+      vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = "Breakpoint" })
+      vim.keymap.set('n', '<leader>dB', function()
         dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-      end)
+      end, { desc = "Breakpoint Condition" })
 
       -- Dap UI setup
       -- For more information, see |:help nvim-dap-ui|

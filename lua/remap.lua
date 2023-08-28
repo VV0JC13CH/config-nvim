@@ -12,8 +12,8 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- Tabs navigation
-vim.keymap.set('n', '<C-A-Right>', '<CMD>tabn<CR>', { desc = '[R]ight tab' })
-vim.keymap.set('n', '<C-A-Left>', '<CMD>tabp<CR>', { desc = '[L]eft tab' })
+vim.keymap.set('n', '<C-A-Right>', '<CMD>tabn<CR>', { desc = 'Right tab' })
+vim.keymap.set('n', '<C-A-Left>', '<CMD>tabp<CR>', { desc = 'Left tab' })
 
 -- Windows navigation with Ctrl-[hjkl]
 vim.keymap.set('n', '<A-C-J>', '<C-W>j', { desc = 'Switch to left window' })
@@ -37,4 +37,4 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- Find and replace word below cursor
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc = "Rename current word"})
