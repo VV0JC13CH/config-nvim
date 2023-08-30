@@ -44,8 +44,8 @@ return {
       nmap('<space>gr', require('telescope.builtin').lsp_references, 'Go to References')
       nmap('<space>gi', vim.lsp.buf.implementation, 'Go to Implementation')
       nmap('<leader>gt', vim.lsp.buf.type_definition, 'Go to Type definition')
-      nmap('<leader>gds', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
-      nmap('<leader>gws', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
+      nmap('<leader>gs', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
+      nmap('<leader>gw', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
 
       -- See `:help K` for why this keymap
       nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
