@@ -6,12 +6,12 @@
 
 -- [[ Setting appearance ]]
 require("appearance")
--- [[ Setting keymap ]]
-require("remap")
 -- [[ Setting diagnostic ]]
 require("diagnostic")
 -- [[ Setting options ]]
 require("options")
+-- [[ Setting keymap ]]
+require("remap")
 -- See `:help vim.o`
 
 -- Install package manager
@@ -34,7 +34,9 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   {
     -- Adds plugins, configuration, etc from `lua/plugins/*.lua`
+    -- Adds language-specific configurations from `lua/plugins/languages/*.lua`
     { import = 'plugins' },
+    { import = 'plugins/languages' },
   } }, {})
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

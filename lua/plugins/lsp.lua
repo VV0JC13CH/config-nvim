@@ -36,8 +36,8 @@ return {
 
       nmap('<leader>cr', vim.lsp.buf.rename, 'Code: Rename')
       nmap('<leader>ca', vim.lsp.buf.code_action, 'Code: Action')
-      vim.keymap.set('n', '<leader>cf', '<cmd>Format<CR>', { desc = 'Code: Format File' })
-      vim.keymap.set('v', '<leader>cf', '<cmd>Format<CR>', { desc = 'Code: Format Selection' })
+      vim.keymap.set('n', '<leader>cf', '<cmd>Format<CR>', { desc = 'Code: Format File (lsp)' })
+      vim.keymap.set('v', '<leader>cf', '<cmd>Format<CR>', { desc = 'Code: Format Selection (lsp)' })
 
 
       nmap('<space>gd', vim.lsp.buf.definition, 'Go to Definition')
