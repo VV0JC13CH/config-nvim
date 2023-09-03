@@ -50,9 +50,9 @@ return {
       vim.keymap.set('v', '<leader>cf', '<cmd>Format<CR>', { desc = 'Code: Format Selection (lsp)' })
 
 
-      nmap('<space>gd', vim.lsp.buf.definition, 'Go to Definition')
-      nmap('<space>gr', require('telescope.builtin').lsp_references, 'Go to References')
-      nmap('<space>gi', vim.lsp.buf.implementation, 'Go to Implementation')
+      nmap('<leader>gd', vim.lsp.buf.definition, 'Go to Definition')
+      nmap('<leader>gr', require('telescope.builtin').lsp_references, 'Go to References')
+      nmap('<leader>gi', vim.lsp.buf.implementation, 'Go to Implementation')
       nmap('<leader>gt', vim.lsp.buf.type_definition, 'Go to Type definition')
       nmap('<leader>gs', require('telescope.builtin').lsp_document_symbols, 'Document Symbols')
       nmap('<leader>gw', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace Symbols')
@@ -62,7 +62,7 @@ return {
       nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
       -- Lesser used LSP functionality
-      nmap('<space>gD', vim.lsp.buf.declaration, 'Go to Declaration')
+      nmap('<leader>gD', vim.lsp.buf.declaration, 'Go to Declaration')
       nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Workspace Add Folder')
       nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Workspace Remove Folder')
       nmap('<leader>wl', function()
