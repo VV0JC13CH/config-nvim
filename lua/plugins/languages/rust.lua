@@ -4,5 +4,5 @@ return {
     vim.o.syntax = 'Enable'
     vim.filetype.indend = true
   end,
-  ft = { "rs", "toml" }
+  ft = { "rust", "toml" }
 }

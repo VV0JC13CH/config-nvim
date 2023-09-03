@@ -1,6 +1,6 @@
 return {
   {
     'hashivim/vim-terraform',
-    ft = { "tf", "tfvar" }
+    ft = { "terraform", "terraform-vars" }
   }
 }

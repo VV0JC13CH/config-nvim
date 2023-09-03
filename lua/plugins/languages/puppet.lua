@@ -1,6 +1,6 @@
 return {
-  'mrk21/yaml-vim',
-  'TheLocehiliosan/vim-eyaml',
-  'rodjek/vim-puppet',
-  'vim-ruby/vim-ruby',
+  { 'mrk21/yaml-vim',            ft = { "yaml", "eyaml" } },
+  { 'TheLocehiliosan/vim-eyaml', ft = { "yaml", "eyaml" } },
+  { 'rodjek/vim-puppet',         ft = { "puppet", "epuppet" } },
+  { 'vim-ruby/vim-ruby',         ft = { "ruby" } }
 }
