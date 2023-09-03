@@ -2,6 +2,16 @@
 -- NOTE: This is where your plugins related to LSP can be installed.
 --  The configuration is done below. Search for lspconfig to find it below.
 return {
+  -- Display lightbuld when code action available
+  {
+    'kosayoda/nvim-lightbulb',
+    config = function()
+      require("nvim-lightbulb").setup({
+        autocmd = { enabled = true }
+      })
+    end,
+    dependencies = { "neovim/nvim-lspconfig" }
+  }, {
   -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
   dependencies = {
@@ -11,7 +21,7 @@ return {
 
     -- Useful status updates for LSP
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    { 'j-hui/fidget.nvim', tag = 'legacy',       opts = {} },
+    { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
     -- Additional lua configuration, makes nvim stuff amazing!
     'folke/neodev.nvim',
@@ -124,4 +134,4 @@ return {
       end,
     }
   end,
-}
+} }
