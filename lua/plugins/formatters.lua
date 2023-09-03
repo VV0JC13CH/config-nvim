@@ -10,9 +10,10 @@ return {
   -- "gb" to comment visual regions/lines (block comment)
   { 'numToStr/Comment.nvim', opts = {} },
   {
-    'sbdchd/neoformat', config = function()
-      vim.keymap.set('n', '<leader>cF', '<cmd>Neoformat<CR>', { desc = 'Code: Format File (formatter)' })
-      vim.keymap.set('v', '<leader>cF', '<cmd>Neoformat<CR>', { desc = 'Code: Format Selection (formatter)' })
-    end
+    'sbdchd/neoformat',
+    keys = {
+      { "<leader>cF", "<cmd>Neoformat<CR>", mode = "n", desc = "code: format file (formatter)" },
+      { "<leader>cF", "<cmd>Neoformat<CR>", mode = "v", desc = "code: format file (formatter)" },
+    },
   }
 }
