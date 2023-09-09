@@ -19,7 +19,27 @@ return {
       -- integration for nvim-dap with telescope.nvim
       { "nvim-telescope/telescope-dap.nvim" },
       -- a debug adapter for the Neovim Lua language
-      { "jbyuki/one-small-step-for-vimkind" },
+      {
+        "jbyuki/one-small-step-for-vimkind",
+        -- stylua: ignore
+        keys = {
+          { "<leader>daL", function() require("osv").launch({ port = 8086 }) end, desc = "Adapter Lua Server" },
+          { "<leader>dal", function() require("osv").run_this() end,              desc = "Adapter Lua" },
+        },
+        config = function()
+          local dap = require("dap")
+          dap.adapters.nlua = function(callback)
+            callback({ type = "server", host = "127.0.0.1", port = 8086 })
+          end
+          dap.configurations.lua = {
+            {
+              type = "nlua",
+              request = "attach",
+              name = "Attach to running Neovim instance",
+            },
+          }
+        end,
+      },
 
       -- Installs the debug adapters for you
       'williamboman/mason.nvim',
@@ -160,28 +180,11 @@ return {
       { "<leader>dx", function() require("dap").terminate() end,         desc = "Terminate", },
     },
     config = function()
-      local dap = require 'dap'
-      local dapui = require 'dapui'
-
-      require('mason-nvim-dap').setup {
-        -- Makes a best effort to setup the various debuggers with
-        -- reasonable debug configurations
-        automatic_setup = true,
-        automatic_installation = true,
-
-        -- You can provide additional configuration to the handlers,
-        -- see mason-nvim-dap README for more information
-        handlers = {},
-
-        -- You'll need to check that you have the required things installed
-        -- online, please don't ask me how to install them :)
-        ensure_installed = {
-          -- Update this to ensure that you have the debuggers for the langs you want
-          'delve',
-        },
+      require("nvim-dap-virtual-text").setup {
+        commented = true,
       }
 
-
+      local dap, dapui = require "dap", require "dapui"
       -- Dap UI setup
       -- For more information, see |:help nvim-dap-ui|
       dapui.setup {
@@ -204,8 +207,34 @@ return {
         },
       }
 
-      dap.listeners.after.event_initialized['dapui_config'] = dapui.open
-      dap.listeners.before.event_terminated['dapui_config'] = dapui.close
-      dap.listeners.before.event_exited['dapui_config'] = dapui.close
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close()
+      end
+
+
+      require('mason-nvim-dap').setup {
+        -- Makes a best effort to setup the various debuggers with
+        -- reasonable debug configurations
+        automatic_setup = true,
+        automatic_installation = true,
+
+        -- You can provide additional configuration to the handlers,
+        -- see mason-nvim-dap README for more information
+        handlers = nil,
+
+        -- You'll need to check that you have the required things installed
+        -- online, please don't ask me how to install them :)
+        ensure_installed = {
+          -- Update this to ensure that you have the debuggers for the langs you want
+          'delve',
+          'lua'
+        },
+      }
     end,
   } }
