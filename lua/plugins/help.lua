@@ -28,6 +28,12 @@ return {
       })
     end,
     dependencies = { "neovim/nvim-lspconfig", "folke/trouble.nvim", "mfussenegger/nvim-dap" }
-  }
+  },
+  {
+    "preservim/tagbar",
+    keys = {
+      { "<leader>tv", ":TagbarToggle<CR>", desc = "Toggle Tagbar View" },
+    },
 
+  }
 }
