@@ -12,7 +12,7 @@ end
 return {
   "epwalsh/obsidian.nvim",
   lazy = true,
-  event = { "BufReadPre " .. vim.fn.expand "~" .. "/Documents/*" },
+  event = { "BufReadPre " .. vim.fn.expand "~" .. "/Documents/**.md" },
   dependencies = {
     -- Required.
     "nvim-lua/plenary.nvim",
