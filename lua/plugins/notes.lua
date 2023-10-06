@@ -29,6 +29,7 @@ return {
   },
   opts = {
     dir = Choose_vault("~/Documents/Obsidian/Private", "~/Documents/Obsidian/DevOps"),  -- no need to call 'vim.fn.expand' here
+        mappings = {},
 
     -- Optional, if you keep notes in a specific subdirectory of your vault.
  -- notes_subdir = "notes",
@@ -109,17 +110,17 @@ return {
     -- remaining finders will be attempted in the original order.
     finder = "telescope.nvim",
   },
-  config = function(_, opts)
-    require("obsidian").setup(opts)
-
-    -- Optional, override the 'gf' keymap to utilize Obsidian's search functionality.
-    -- see also: 'follow_url_func' config option above.
-    vim.keymap.set("n", "gf", function()
-      if require("obsidian").util.cursor_on_markdown_link() then
-        return "<cmd>ObsidianFollowLink<CR>"
-      else
-        return "gf"
-      end
-    end, { noremap = false, expr = true })
-  end,
+      keys = {
+      { "<leader>ob", ":ObsidianBacklinks<CR>", desc = "Backlinks" },
+      { "<leader>oc", ":ObsidianCheck<CR>", desc = "Check" },
+      { "<leader>of", ":ObsidianFollowLink<CR>", desc = "Follow Link" },
+      { "<leader>ol", ":ObsidianLink<CR>", desc = "Link" },
+      { "<leader>onl", ":ObsidianLinkNew<CR>", desc = "New Link" },
+      { "<leader>onn", ":ObsidianNew<CR>", desc = "New Note" },
+      { "<leader>oo", ":ObsidianOpen<CR>", desc = "Open Note" },
+      { "<leader>oq", ":ObsidianQuickSwitch<CR>", desc = "Quick Switch" },
+      { "<leader>os", ":ObsidianSearch<CR>", desc = "Search" },
+      { "<leader>ot", ":ObsidianToday<CR>", desc = "Today" },
+      { "<leader>oy", ":ObsidianYesterday<CR>", desc = "Yesterday" },
+    },
 }
