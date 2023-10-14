@@ -2,7 +2,7 @@
 --
 -- Wiki/notes related plugins
 --
-function Choose_vault( priv_vault, work_vault )
+function Default_vault( priv_vault, work_vault )
 if os.execute( 'cd ' .. priv_vault ) == 0 then
     return priv_vault
 end
@@ -28,7 +28,7 @@ return {
     "preservim/vim-markdown",
   },
   opts = {
-    dir = Choose_vault("~/Documents/Obsidian/Private", "~/Documents/Obsidian/DevOps"),  -- no need to call 'vim.fn.expand' here
+    dir = Default_vault("~/Documents/Obsidian/Private", "~/Documents/Obsidian/Workspace"),  -- no need to call 'vim.fn.expand' here
         mappings = {},
 
     -- Optional, if you keep notes in a specific subdirectory of your vault.
