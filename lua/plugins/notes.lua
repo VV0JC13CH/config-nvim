@@ -32,7 +32,7 @@ return {
         mappings = {},
 
     -- Optional, if you keep notes in a specific subdirectory of your vault.
- -- notes_subdir = "notes",
+    notes_subdir = "Notes",
 
     daily_notes = {
       -- Optional, if you keep daily notes in a separate directory.
