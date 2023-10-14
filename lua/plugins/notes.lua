@@ -127,7 +127,7 @@ local opts_work = {
     date_format = "%Y-%m-%d"
   },
   templates = {
-    subdir = "templates",
+    subdir = "Templates",
     date_format = "%Y-%m-%d-%a",
     time_format = "%H:%M",
   },
