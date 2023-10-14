@@ -114,6 +114,7 @@ local keys_init = {
   { "<leader>onn", ":ObsidianNew<CR>",         desc = "New Note" },
   { "<leader>oo",  ":ObsidianOpen<CR>",        desc = "Open Note" },
   { "<leader>oq",  ":ObsidianQuickSwitch<CR>", desc = "Quick Switch" },
+  { "<leader>ox",  ":ObsidianTemplate<CR>",    desc = "Template" },
   { "<leader>os",  ":ObsidianSearch<CR>",      desc = "Search" },
   { "<leader>ot",  ":ObsidianToday<CR>",       desc = "Today" },
   { "<leader>oy",  ":ObsidianYesterday<CR>",   desc = "Yesterday" },
