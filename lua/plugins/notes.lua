@@ -142,7 +142,7 @@ local keys_work = {
     opts_work.dir ..
     "/" ..
     opts_work.notes_subdir ..
-    "/" .. today .. ".md<CR>",
+    "/" .. today .. ".md<CR>:w<CR>",
     desc = "New Note"
   },
   {
@@ -151,7 +151,7 @@ local keys_work = {
     opts_work.dir ..
     "/" ..
     opts_work.daily_notes.folder ..
-    "/" .. today .. ".md<CR>",
+    "/" .. today .. ".md<CR>:w<CR>",
     desc = "Today"
   },
   {
@@ -160,7 +160,7 @@ local keys_work = {
     opts_work.dir ..
     "/" ..
     opts_work.daily_notes.folder ..
-    "/" .. yesterday .. ".md<CR>",
+    "/" .. yesterday .. ".md<CR>:w<CR>",
     desc = "Yesterday"
   },
 }
@@ -187,7 +187,7 @@ local keys_priv = {
     opts_priv.dir ..
     "/" ..
     opts_priv.notes_subdir ..
-    "/" .. today .. ".md<CR>",
+    "/" .. today .. ".md<CR>:w<CR>",
     desc = "New Note"
   },
   {
@@ -196,7 +196,7 @@ local keys_priv = {
     opts_priv.dir ..
     "/" ..
     opts_priv.daily_notes.folder ..
-    "/" .. today .. ".md<CR>",
+    "/" .. today .. ".md<CR>:w<CR>",
     desc = "Today"
   },
   {
@@ -205,7 +205,7 @@ local keys_priv = {
     opts_priv.dir ..
     "/" ..
     opts_priv.daily_notes.folder ..
-    "/" .. yesterday .. ".md<CR>",
+    "/" .. yesterday .. ".md<CR>:w<CR>",
     desc = "Yesterday"
   },
 }
