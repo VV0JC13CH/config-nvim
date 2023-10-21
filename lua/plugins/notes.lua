@@ -122,7 +122,7 @@ local keys_init = {
 
 local opts_work = {
   dir = "~/Documents/Obsidian/Workspace",
-  notes_subdir = "Notes",
+  notes_subdir = "Inbox",
   daily_notes = {
     folder = "Journal",
     date_format = "%Y-%m-%d"
