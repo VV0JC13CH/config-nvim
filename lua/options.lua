@@ -73,3 +73,5 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.wildignorecase = true
 vim.o.wildmode = "longest,list:longest,full"
 
+-- Change titles of Alacritty Window (f.e. time tracking purposes)
+vim.opt.titlestring = [[%f %h%m%r%w %{v:progname}]]
