@@ -104,5 +104,22 @@ return {
     config = function()
       vim.keymap.set('n', '<leader>tu', '<cmd>UndotreeToggle<CR>', { desc = 'Toggle Undo tree' })
     end,
-  }
+  },
+{
+'stevearc/oil.nvim',
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  keys = {
+    { '<leader>to',
+    function()
+      require('oil').open()
+    end,
+    desc = 'Toggle oil', }
+  },
+  opts = {
+    default_file_explorer = true,
+    view_options = {
+      show_hidden = true,
+    },
+  },
 }
+  }
