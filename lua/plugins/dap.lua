@@ -1,6 +1,7 @@
 -- dap.lua
 
 return {
+  'nvim-neotest/nvim-nio',
   {
     'folke/trouble.nvim',
     config = function()
