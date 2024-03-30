@@ -22,7 +22,7 @@ return {
         ["<leader>h"] = { name = "+harpoon" },
         ["<leader>r"] = { name = "+rename" },   -- temp
         ["<leader>p"] = { name = "+previous" }, -- temp
-        ["<leader>o"] = { name = "+obsidian" },
+        ["<leader>O"] = { name = "+obsidian" },
         ["<leader>s"] = { name = "+search" },
         ["<leader>t"] = { name = "+toggle" },
         ["<leader>w"] = { name = "+workspace" },

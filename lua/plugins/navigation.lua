@@ -105,21 +105,31 @@ return {
       vim.keymap.set('n', '<leader>tu', '<cmd>UndotreeToggle<CR>', { desc = 'Toggle Undo tree' })
     end,
   },
-{
-'stevearc/oil.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
-  keys = {
-    { '<leader>to',
-    function()
-      require('oil').open()
-    end,
-    desc = 'Toggle oil', }
-  },
-  opts = {
-    default_file_explorer = true,
-    view_options = {
-      show_hidden = true,
+  {
+    'stevearc/oil.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    keys = {
+      {
+        '<leader>to',
+        function()
+          vim.cmd("vsplit | wincmd l")
+          require("oil").open()
+        end,
+        desc = 'Toggle Oil',
+      }
+      , {
+      '<leader>o',
+      function()
+        require('oil').open()
+      end,
+      desc = 'oil',
+    }
     },
-  },
-}
+    opts = {
+      default_file_explorer = true,
+      view_options = {
+        show_hidden = true,
+      },
+    },
   }
+}

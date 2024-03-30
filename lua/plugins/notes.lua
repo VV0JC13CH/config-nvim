@@ -106,18 +106,18 @@ local opts_init = {
 }
 
 local keys_init = {
-  { "<leader>ob",  ":ObsidianBacklinks<CR>",   desc = "Backlinks" },
-  { "<leader>oc",  ":ObsidianCheck<CR>",       desc = "Check" },
-  { "<leader>of",  ":ObsidianFollowLink<CR>",  desc = "Follow Link" },
-  { "<leader>ol",  ":ObsidianLink<CR>",        desc = "Link" },
-  { "<leader>onl", ":ObsidianLinkNew<CR>",     desc = "New Link" },
-  { "<leader>onn", ":ObsidianNew<CR>",         desc = "New Note" },
-  { "<leader>oo",  ":ObsidianOpen<CR>",        desc = "Open Note" },
-  { "<leader>oq",  ":ObsidianQuickSwitch<CR>", desc = "Quick Switch" },
-  { "<leader>ox",  ":ObsidianTemplate<CR>",    desc = "Template" },
-  { "<leader>os",  ":ObsidianSearch<CR>",      desc = "Search" },
-  { "<leader>ot",  ":ObsidianToday<CR>",       desc = "Today" },
-  { "<leader>oy",  ":ObsidianYesterday<CR>",   desc = "Yesterday" },
+  { "<leader>Ob",  ":ObsidianBacklinks<CR>",   desc = "Backlinks" },
+  { "<leader>Oc",  ":ObsidianCheck<CR>",       desc = "Check" },
+  { "<leader>Of",  ":ObsidianFollowLink<CR>",  desc = "Follow Link" },
+  { "<leader>Ol",  ":ObsidianLink<CR>",        desc = "Link" },
+  { "<leader>Onl", ":ObsidianLinkNew<CR>",     desc = "New Link" },
+  { "<leader>Onn", ":ObsidianNew<CR>",         desc = "New Note" },
+  { "<leader>Oo",  ":ObsidianOpen<CR>",        desc = "Open Note" },
+  { "<leader>Oq",  ":ObsidianQuickSwitch<CR>", desc = "Quick Switch" },
+  { "<leader>Ox",  ":ObsidianTemplate<CR>",    desc = "Template" },
+  { "<leader>Os",  ":ObsidianSearch<CR>",      desc = "Search" },
+  { "<leader>Ot",  ":ObsidianToday<CR>",       desc = "Today" },
+  { "<leader>Oy",  ":ObsidianYesterday<CR>",   desc = "Yesterday" },
 }
 
 local opts_work = {
@@ -135,9 +135,9 @@ local opts_work = {
 }
 
 local keys_work = {
-  { "<leader>ow", desc = "[Work Notes]" },
+  { "<leader>Ow", desc = "[Work Notes]" },
   {
-    "<leader>own",
+    "<leader>Own",
     ":edit " ..
     opts_work.dir ..
     "/" ..
@@ -146,7 +146,7 @@ local keys_work = {
     desc = "New Note"
   },
   {
-    "<leader>owt",
+    "<leader>Owt",
     ":edit " ..
     opts_work.dir ..
     "/" ..
@@ -155,7 +155,7 @@ local keys_work = {
     desc = "Today"
   },
   {
-    "<leader>owy",
+    "<leader>Owy",
     ":edit " ..
     opts_work.dir ..
     "/" ..
@@ -180,9 +180,9 @@ local opts_priv = {
 }
 
 local keys_priv = {
-  { "<leader>op", desc = "[Private Notes]" },
+  { "<leader>Op", desc = "[Private Notes]" },
   {
-    "<leader>opn",
+    "<leader>Opn",
     ":edit " ..
     opts_priv.dir ..
     "/" ..
@@ -191,7 +191,7 @@ local keys_priv = {
     desc = "New Note"
   },
   {
-    "<leader>opt",
+    "<leader>Opt",
     ":edit " ..
     opts_priv.dir ..
     "/" ..
@@ -200,7 +200,7 @@ local keys_priv = {
     desc = "Today"
   },
   {
-    "<leader>opy",
+    "<leader>Opy",
     ":edit " ..
     opts_priv.dir ..
     "/" ..
