@@ -92,7 +92,7 @@ return {
       marksman = {},
       puppet = {},
       pyright = {},
-      ruby_lsp = {},
+      --ruby_ls = {},
       rust_analyzer = {},
       sqlls = {},
       taplo = {},
