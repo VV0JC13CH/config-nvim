@@ -25,6 +25,8 @@ return {
 
     -- Additional lua configuration, makes nvim stuff amazing!
     'folke/neodev.nvim',
+    -- GDscript support
+    'Scony/godot-gdscript-toolkit',
   },
   config = function()
     -- LSP settings.
