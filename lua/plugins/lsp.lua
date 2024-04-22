@@ -27,6 +27,7 @@ return {
     'folke/neodev.nvim',
     -- GDscript support
     'Scony/godot-gdscript-toolkit',
+    'habamax/vim-godot',
   },
   config = function()
     -- LSP settings.
