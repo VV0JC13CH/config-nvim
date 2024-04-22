@@ -19,6 +19,9 @@ return {
         ensure_installed = {
           'c',
           'cpp',
+          'gdscript',
+          'godot_resource',
+          'gdshader',
           'go',
           'lua',
           'python',
