@@ -20,7 +20,7 @@ return {
         arg = "leetcode.nvim",
 
         ---@type lc.lang
-        lang = "python",
+        lang = "python3",
 
         cn = { -- leetcode.cn
             enabled = false, ---@type boolean
@@ -44,7 +44,7 @@ return {
 
         injector = { ---@type table<lc.lang, lc.inject>
             ["python3"] = {
-                before = "import math",
+                before = "from typing import List", "import math",
             },
             ["cpp"] = {
                 before = { "#include <bits/stdc++.h>", "using namespace std;" },
