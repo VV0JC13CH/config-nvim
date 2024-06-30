@@ -43,7 +43,7 @@ return {
     },
     {
       "Saecki/crates.nvim",
-      dependecies = {
+      dependencies = {
         "nvim-lua/plenary.nvim"
       },
       ft = { "toml" }
