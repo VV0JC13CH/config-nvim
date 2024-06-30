@@ -5,7 +5,7 @@ return {
       vim.o.syntax = 'Enable'
       vim.filetype.indend = true
     end,
-    dependecies = {
+    dependencies = {
       'neovim/nvim-lspconfig',
       'nvim-lua/plenary.nvim',
       'mfussenegger/nvim-dap',
