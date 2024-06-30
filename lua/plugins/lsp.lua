@@ -96,7 +96,7 @@ return {
       puppet = {},
       pyright = {},
       --ruby_ls = {},
-      rust_analyzer = {},
+      -- rust_analyzer = {},
       sqlls = {},
       taplo = {},
       tailwindcss = {},
