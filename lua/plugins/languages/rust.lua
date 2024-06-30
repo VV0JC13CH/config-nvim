@@ -11,7 +11,7 @@ return {
       'mfussenegger/nvim-dap',
     },
     {
-      "simrat39/rust-tools.nvim",
+      "mrcjkb/rustaceanvim",
       config = function()
         local dap = require("dap")
 
