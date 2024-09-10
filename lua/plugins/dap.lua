@@ -4,10 +4,20 @@ return {
   'nvim-neotest/nvim-nio',
   {
     'folke/trouble.nvim',
-    config = function()
-      vim.keymap.set('n', '<leader>te', '<cmd>TroubleToggle<cr>', { desc = "Toggle Errors" })
-      vim.keymap.set('n', '<leader>dd', '<cmd>TroubleToggle<cr>', { desc = "Toggle Debugger" })
-    end,
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
+    keys = {
+      {
+        "<leader>te",
+        "<cmd>Trouble diagnostics toggle focus=true<cr>",
+        desc = "Toggle Diagnostics",
+      },
+      {
+        "<leader>ts",
+        "<cmd>Trouble symbols toggle focus=false<cr>",
+        desc = "Toggle Symbols",
+      },
+    }
   },
   {
     'mfussenegger/nvim-dap',
