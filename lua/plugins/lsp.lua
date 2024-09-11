@@ -100,7 +100,6 @@ return {
       sqlls = {},
       taplo = {},
       tailwindcss = {},
-      tsserver = {},
       terraformls = {},
       lemminx = {},
       yamlls = {},
