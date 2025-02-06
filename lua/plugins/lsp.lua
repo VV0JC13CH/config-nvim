@@ -86,7 +86,7 @@ return {
     local servers = {
       bashls = {},
       clangd = {},
-      omnisharp_mono = {},
+      omnisharp = {},
       dotls = {},
       gopls = {},
       html = {},
