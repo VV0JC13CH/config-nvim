@@ -1,4 +1,4 @@
 return {
-  'ActivityWatch/aw-watcher-vim',
+  -- 'ActivityWatch/aw-watcher-vim',
   'wakatime/vim-wakatime',
 }
