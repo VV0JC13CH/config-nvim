@@ -49,8 +49,8 @@ return {
 
       nmap('<leader>cr', vim.lsp.buf.rename, 'Code: Rename')
       nmap('<leader>ca', vim.lsp.buf.code_action, 'Code: Action')
-      vim.keymap.set('n', '<leader>cf', '<cmd>Format<CR>', { desc = 'Code: Format File (lsp)' })
-      vim.keymap.set('v', '<leader>cf', '<cmd>Format<CR>', { desc = 'Code: Format Selection (lsp)' })
+      vim.keymap.set('n', '<leader>cf', vim.lsp.buf.format(), { desc = 'Code: Format File (lsp)' })
+      vim.keymap.set('v', '<leader>cf', vim.lsp.buf.format(), { desc = 'Code: Format Selection (lsp)' })
 
 
       nmap('<leader>gd', vim.lsp.buf.definition, 'Go to Definition')
@@ -113,6 +113,15 @@ return {
       },
     }
 
+    require'lspconfig'.lua_ls.setup{
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = {'vim'},  -- Recognize 'vim' as a global variable https://mihamina.rktmb.org/2024/08/undefined-global-vim.html
+          },
+        },
+      },
+    }
     -- Setup neovim lua configuration
     require('neodev').setup()
 

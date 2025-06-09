@@ -15,18 +15,19 @@ return {
     config = function()
       local wk = require("which-key")
       wk.setup()
-      wk.register({
-        ["<leader>c"] = { name = "+code" },
-        ["<leader>d"] = { name = "+debug" },
-        ["<leader>g"] = { name = "+goto" },
-        ["<leader>h"] = { name = "+harpoon" },
-        ["<leader>r"] = { name = "+rename" },   -- temp
-        ["<leader>p"] = { name = "+previous" }, -- temp
-        ["<leader>O"] = { name = "+obsidian" },
-        ["<leader>s"] = { name = "+search" },
-        ["<leader>t"] = { name = "+toggle" },
-        ["<leader>w"] = { name = "+workspace" },
-      })
+      wk.add({
+    { "<leader>O", group = "obsidian" },
+    { "<leader>c", group = "code" },
+    { "<leader>d", group = "debug" },
+    { "<leader>g", group = "goto" },
+    { "<leader>h", group = "harpoon" },
+    { "<leader>p", group = "previous" },
+    { "<leader>r", group = "rename" },
+    { "<leader>s", group = "search" },
+    { "<leader>t", group = "toggle" },
+    { "<leader>w", group = "workspace" },
+  }
+)
     end,
     dependencies = { "neovim/nvim-lspconfig", "folke/trouble.nvim", "mfussenegger/nvim-dap" }
   },
