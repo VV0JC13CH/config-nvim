@@ -17,13 +17,21 @@ return {
     }
     -- add ollama if executable found
     if vim.fn.executable "ollama" == 1 then
-      opts.providers["ollama"] = {}
+      opts.providers["ollama"] = {
+          name = "ollama",
+          api_key = "ollama_no_key",
+          endpoint = "http://localhost:11434",
+          models ={
+            "deepseek-coder:6.7b",
+          }
+}
     end
     require("parrot").setup(opts)
   end,
   opts = {
     providers = {
-      ollama = {},
+      ollama = {
+        },
     },
     cmd_prefix = "Prt",
     chat_conceal_model_params = false,
